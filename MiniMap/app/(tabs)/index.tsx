@@ -32,10 +32,10 @@ export default function HomeScreen(){
     setSubscription(
       Magnetometer.addListener(result => {
         if (Math.atan2(result.y, result.x) >= 0) {
-          setRot(-Math.round(Math.atan2(result.y, result.x) * (180 / Math.PI)));
+          setRot(-Math.round(Math.atan2(result.y, result.x) * (180 / Math.PI))+360);
         }
         else {
-          setRot(-Math.round((Math.atan2(result.y, result.x) + 2 * Math.PI) * (180 / Math.PI)));
+          setRot(-Math.round((Math.atan2(result.y, result.x) + 2 * Math.PI) * (180 / Math.PI))+360);
         }
         // console.log('Rotation: ', rot);
         // console.log(result);
